@@ -1,1 +1,11 @@
 <h1>All Your Projects</h1>
+<ul>
+<% @projects.each do |project| %>
+<li>
+	<p>
+		<strong><%= project.title %></strong><br />
+		<%= project.description %>
+	</p>
+</li>
+<% end %>
+</ul>

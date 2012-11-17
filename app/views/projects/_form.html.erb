@@ -1,0 +1,6 @@
+<%= simple_form_for([@user, @project], :html => {:class => 'form-vertical' }) do |f| %> 
+  <%= f.error_notification %>
+  <%= f.input :title, :autofocus => true %> 
+  <%= f.input :description, :as => :text %>
+  <%= f.button :submit, 'Create Project', :class => 'btn-primary' %>
+<% end %>

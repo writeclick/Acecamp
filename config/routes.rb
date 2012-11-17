@@ -12,6 +12,8 @@ DbcCamp::Application.routes.draw do
 
   root :to => 'home#index'
 
+  resources :collaborators, :only => [:new, :create, :destroy]
+
 
   
 

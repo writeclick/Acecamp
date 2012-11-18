@@ -24,7 +24,8 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:user_id]) || User.find_by_email(params[:user][:email])
+		@user = User.find(params[:user_id]) ||
+			User.find_by_email(params[:user][:email])
 		@project = Project.find(params[:id])
 		@collaborator = Collaborator.new
 	end

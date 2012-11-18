@@ -6,9 +6,8 @@ DbcCamp::Application.routes.draw do
 
   devise_for :users
 
-  resources :users do
-    resources :projects
-  end
+  resources :users 
+  resources :projects
 
   root :to => 'home#index'
 

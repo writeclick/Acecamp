@@ -1,5 +1,4 @@
 class CollaboratorsController < ApplicationController
-	before_filter :collaborator_instance
 
 	def new
 		@collaborator = Collaborator.new
@@ -12,7 +11,7 @@ class CollaboratorsController < ApplicationController
 			                               :project_id => @project.id)
 		@collaborator.save
 		# @user = User.find(params[:user_id])
-		redirect_to user_projects_path(params[:user_id])
+		redirect_to projects_path
 	end
 
 	def destroy

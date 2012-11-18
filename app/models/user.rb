@@ -20,5 +20,15 @@ class User < ActiveRecord::Base
   def self.from_email(email_address)
     User.find_by_email(email_address)
   end
+
+  def owner?(project)
+    self.id == project.id
+  end
+
+  def collaborator?(project)
+    @collaborator = Collaborator.find_by_project_id(project.id)
+    self.id == @collaborator.user_id
+#    Collaborator.where(:user_id => self.id).where(:project_id => project.id) == !nil ? true : false
+  end
   
 end

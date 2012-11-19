@@ -11,8 +11,9 @@
 </ul>
 
 <h3>Collaborating Projects</h3>
+
 <ul>
-<% @collaborating_projects.each do |project| %>
+<% @collaborations.each do |project| %>
 <li>
 	<p>
 		<strong><%= project.title %></strong><br />
@@ -21,3 +22,6 @@
 </li>
 <% end %>
 </ul>
+
+
+

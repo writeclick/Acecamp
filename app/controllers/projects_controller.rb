@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
 	def index
 		@projects = @user.projects
 		
-		@collaborating_projects = Collaborator.find_collaborations(@user.id)
+		@collaborations = Collaborator.find_collaborations(@user.id)
 	end
 
 	def new
@@ -24,21 +24,8 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-		@user ||= User.find_by_email(params[:user][:email])
+		#@user ||= User.find_by_email(params[:user][:email])
 		@collaborator = Collaborator.new
-
-		if @user.collaborator?(@project)
-			@temp = "Yo Dude!"
-		else
-			@temp = "You are NOT a collaborator"
-		end
-
-		if @user.owner?(@project)
-			@temp2 = "I am an owner!"
-		else
-			@temp2 = "I am NOT an owner"
-		end
-
 	end
 
 	def edit

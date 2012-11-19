@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :collaborators
+  has_many :collaborators, :through => :projects
   has_many :projects
   
   # Include default devise modules. Others available are:
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def owner?(project)
-    self.id == project.id
+    self.id == project.user_id
   end
 
   def collaborator?(project)

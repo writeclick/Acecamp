@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-	#load_and_authorize_resource
+	
 	before_filter :load_user
 	before_filter :load_project, :except => [:new, :create, :index]	
 
@@ -16,9 +16,8 @@ class ProjectsController < ApplicationController
 	def create
 		@project = Project.new(params[:project])
 		@project.user_id = @user.id
-
 		if @project.save
-			redirect_to project_path(@project.id)
+			redirect_to project_path(@project.id) 
 		else
 			render :new
 		end
@@ -49,6 +48,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def destroy
+
 	end
 
 private

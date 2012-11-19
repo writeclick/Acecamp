@@ -1,6 +1,15 @@
+<% if @user.owner?(@project) %>
 <h1><%= @project.title %></h1>
 
 <p><%= @project.description %></p>
+<p>You are the project owner</p>
+
+<% elsif @user.collaborator?(@project) %>
+<h1><%= @project.title %></h1>
+
+<p><%= @project.description %></p>
+<p>You are a project collaborator</p>
+<% end %>
 
 <%= render 'collaborators/new' %>
 

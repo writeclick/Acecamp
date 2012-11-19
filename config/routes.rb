@@ -8,6 +8,8 @@ DbcCamp::Application.routes.draw do
 
   resources :users 
   resources :projects
+  resources :tasklists, :only => [:new, :create, :show, :update, :destroy]
+  resources :tasks, :only => [:new, :create, :show, :update, :destroy]
 
   root :to => 'home#index'
 

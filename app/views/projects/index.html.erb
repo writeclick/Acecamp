@@ -5,6 +5,10 @@
 	<p>
 		<strong><%= project.title %></strong><br />
 		<%= project.description %>
+		<% project.tasklists.each do |tasklist| %>
+			<p><strong><%= tasklist.name %></strong></p>
+			<%= render :partial => 'tasks/form', :locals => { :tasklist_id => tasklist.id, :project_id => tasklist.project_id } %>
+		<% end %>
 	</p>
 </li>
 <% end %>
@@ -22,6 +26,8 @@
 </li>
 <% end %>
 </ul>
+
+
 
 
 

@@ -5,8 +5,8 @@ class ProjectsController < ApplicationController
 
 	def index
 		@projects = @user.projects
-		
 		@collaborations = Collaborator.find_collaborations(@user.id)
+		@task = Task.new
 	end
 
 	def new
@@ -26,6 +26,7 @@ class ProjectsController < ApplicationController
 	def show
 		#@user ||= User.find_by_email(params[:user][:email])
 		@collaborator = Collaborator.new
+		@tasklist = Tasklist.new
 	end
 
 	def edit

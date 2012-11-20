@@ -1,11 +1,8 @@
-<%= simple_form_for(@collaborator,
-										:url => {:controller => :collaborators,
-															:action => :create,
-															:project_id => @project.id,
-															:user_id => @user.id },
-										:html => {:class => 'form-vertical' }) do |f| %> 
-  <%= f.error_notification %>
+<%= form_tag(:controller => :collaborators,
+							:action => :create,
+							:project_id => project_id,
+							:html => {:class => 'form-vertical' }) do |f| %> 
   <%= text_field_tag :email %>  
   
-  <%= f.button :submit, 'Add Collaborator', :class => 'btn-primary' %>
+  <%= submit_tag('Add Collaborator', :class => 'btn-primary') %>
 <% end %>

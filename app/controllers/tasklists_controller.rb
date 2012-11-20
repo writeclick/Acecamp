@@ -17,11 +17,6 @@ class TasklistsController < ApplicationController
 		end
 	end
 
-	def show
-		@project = Project.find(params[:id])
-		@task = Task.new
-	end
-
 	def update
 
 	end

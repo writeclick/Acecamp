@@ -9,16 +9,13 @@ class CollaboratorsController < ApplicationController
 		@project = Project.find(params[:project_id])
 		@collaborator = Collaborator.new(:user_id => @user.id, 
 			                               :project_id => @project.id)
-		@collaborator.save
-		# @user = User.find(params[:user_id])
-		redirect_to projects_path
+		if @collaborator.save
+			redirect_to projects_path
+		end
 	end
 
 	def destroy
 
 	end
 
-	def collaborator_instance
-			
-	end
 end

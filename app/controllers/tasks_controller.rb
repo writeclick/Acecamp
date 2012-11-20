@@ -15,10 +15,6 @@ class TasksController < ApplicationController
 		end
 	end
 
-	def show
-		@project = Project.find(params[:id])
-	end
-
 	def destroy
 
 	end

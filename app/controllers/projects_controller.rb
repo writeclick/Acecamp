@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
 	def index
 		@projects = @user.projects
 		@collaborations = Collaborator.find_collaborations(@user.id)
+		#@tasklists = @projects.tasklists
 		@task = Task.new
 	end
 

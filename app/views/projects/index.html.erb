@@ -1,31 +1,18 @@
 <h1>All Your Projects</h1>
+<%= render "projects/form", :locals => { :project => @project } %>
 <ul>
-<% @projects.each do |project| %>
-<li>
-	<p>
-		<strong><%= project.title %></strong><br />
-		<%= project.description %>
-		<% project.tasklists.each do |tasklist| %>
-			<p><strong><%= tasklist.name %></strong></p>
-			<%= render :partial => 'tasks/form', :locals => { :tasklist_id => tasklist.id, :project_id => tasklist.project_id } %>
-		<% end %>
-	</p>
-</li>
-<% end %>
+<%= render @projects %>
 </ul>
 
 <h3>Collaborating Projects</h3>
 
 <ul>
-<% @collaborations.each do |project| %>
-<li>
-	<p>
-		<strong><%= project.title %></strong><br />
-		<%= project.description %>
-	</p>
-</li>
-<% end %>
+
+<%= render @collaborations %>
+
 </ul>
+
+<%= params %>
 
 
 

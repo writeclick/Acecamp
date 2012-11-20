@@ -1,0 +1,25 @@
+<li>
+	<p>
+		<strong><%= project.title %></strong><br />
+		<%= project.description %>
+
+		<%= render :partial => 'tasklists/form',
+							 :locals => { :project_id => project.id} %>
+
+		<% project.tasklists.each do |tasklist| %>
+			<p><strong>Tasklist:<%= tasklist.name %></strong></p>
+
+			<%= render :partial => 'tasks/form', 
+								 :locals => { :tasklist_id => tasklist.id, 
+								 							:project_id => tasklist.project_id } %>
+
+			<ul>
+			<% tasklist.tasks.each do |task| %>
+					<li>
+						<strong><%= task.name %></strong><br /><%= task.description %>
+					</li>
+			<% end %>
+			</ul>
+		<% end %>
+	</p>
+</li>

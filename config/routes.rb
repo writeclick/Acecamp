@@ -1,7 +1,7 @@
 DbcCamp::Application.routes.draw do
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'projects#index'
   end
 
   devise_for :users
@@ -11,7 +11,11 @@ DbcCamp::Application.routes.draw do
   resources :tasklists, :only => [:new, :create, :show, :update, :destroy]
   resources :tasks, :only => [:new, :create, :show, :update, :destroy]
 
-  root :to => 'home#index'
+  #root :to => 'home#index
+
+  devise_scope :user do
+    root :to => "devise/sessions#new"
+  end
 
   resources :collaborators, :only => [:new, :create, :destroy]
 

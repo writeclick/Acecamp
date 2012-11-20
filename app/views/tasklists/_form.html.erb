@@ -1,11 +1,8 @@
-<%= simple_form_for(@tasklist,
-										:url => {:controller => :tasklists,
-															:action => :create,
-															:project_id => @project.id,
-														},
-										:html => {:class => 'form-vertical' }) do |f| %> 
-  <%= f.error_notification %>
-  <%= f.input :name %>  
+<%= form_tag(:controller => :tasklists,
+							:action => :create,
+							:project_id => project_id,
+							:html => {:class => 'form-vertical' }) do |f| %> 
+  <%= text_field :tasklist, :name %>  
   
-  <%= f.button :submit, 'Add Tasklist', :class => 'btn-primary' %>
+  <%= submit_tag('Add Tasklist', :class => 'btn-primary') %>
 <% end %>

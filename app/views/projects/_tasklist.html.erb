@@ -1,0 +1,4 @@
+<p><strong>Tasklist:<%= tasklist.name %></strong></p>
+			<%= render :partial => 'tasks/form',
+									:locals => { :tasklist_id => tasklist.id,
+																:project_id => tasklist.project_id } %>

@@ -1,7 +1,7 @@
-<%= form_tag(:controller => :collaborators,
+<%= form_tag url_for(:controller => :collaborators,
 							:action => :create,
-							:project_id => project_id,
-							:html => {:class => 'form-vertical' }) do |f| %> 
+							:project_id => project_id),
+							:class => 'form-vertical' do %> 
   <%= text_field_tag :email %>  
   
   <%= submit_tag('Add Collaborator', :class => 'btn-primary') %>

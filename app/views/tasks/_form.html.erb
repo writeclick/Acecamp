@@ -1,10 +1,12 @@
-<%= form_tag(:controller => "tasks", 
-						 :action => "create", 
-						 :method => "post", 
-						 :tasklist_id => tasklist_id,
-						 :html => {:class => 'form-vertical' }) do |f| %> 
-  <%= text_field :task, :name %>  
-  <%= text_area :task, :description %>  
-  
+<%= form_tag url_for(:controller => :tasks, 
+						 :action => :create,
+						 :tasklist_id => tasklist_id),			 
+						 :class => 'form-vertical' do %>
+	<fieldset> 
+  <%= text_field :task, :name %><br />
+  <%= text_area :task, :description %><br />
+ 
   <%= submit_tag('Add Task', :class => 'btn-primary') %>
+  </fieldset>
 <% end %>
+	

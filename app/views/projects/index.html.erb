@@ -1,20 +1,26 @@
-<h1>All Your Projects</h1>
-<%= render "projects/form", :locals => { :project => @project } %>
-<ul>
-<%= render @projects %>
-</ul>
 
-<h3>Collaborating Projects</h3>
+<div class="span8">
+	<div class="well">
 
-<ul>
+		<ul class="nav nav-tabs" id="projects_tabs">			
+			<li><a href="#users_projects" data-toggle="tab">Your Projects</a></li>
+			<li><a href="#collaborations" data-toggle="tab">Collaborations</a></li>
+			<%= render "projects/form", :locals => { :project => @project } %>
+		</ul>
 
-<%= render 'collaboration' %>
+		<div class="tab-content">
+			<%= render 'projects_body' %>		
+			<%= render 'collaboration' %>
+		</div>
+			
+			
+	</div>
+</div>
 
-</ul>
+<div class="span4">
+	<div class="well">
 
-<%= params %>
-
-
-
+	</div>
+</div>
 
 

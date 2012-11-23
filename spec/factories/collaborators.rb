@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :collaborator do
-    user_id 1
+    sequence(:user_id) { |n| "{n}" }
     project_id 1
   end
 end

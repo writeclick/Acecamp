@@ -1,7 +1,9 @@
+require 'faker'
+
 FactoryGirl.define do
   factory :project do
-    title "This Is A Project"
-    description "This is the description for the project.\nThe next line of text."
+    title { Faker::Name.title }
+    description { Faker::Lorem.paragraph(sentence_count = 3, supplemental = false) }
     user_id 1
   end
 end

@@ -1,9 +1,9 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+require 'faker'
 
 FactoryGirl.define do
   factory :task do
-    name "MyString"
-    description "MyText"
+    name { Faker::Name.title }
+    description { Faker::Lorem.paragraph(sentence_count = 3, supplemental = false) }
     tasklist_id 1
   end
 end

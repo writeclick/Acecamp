@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
     @collaborator = Collaborator.find_by_project_id(project.id)
     return false if @collaborator.nil?
     self.id == @collaborator.user_id
-#    Collaborator.where(:user_id => self.id).where(:project_id => project.id) == !nil ? true : false
   end
 
 end

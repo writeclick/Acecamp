@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :collaborator do
     sequence(:user_id) { |n| "{n}" }
-    project_id 1
+    sequence(:project_id) { |n| "{n}" }
   end
 end

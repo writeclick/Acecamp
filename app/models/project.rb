@@ -3,4 +3,6 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :collaborators
   has_many :tasklists
+
+  validates_presence_of :title, :user_id
 end

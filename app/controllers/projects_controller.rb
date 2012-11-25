@@ -1,14 +1,14 @@
 class ProjectsController < ApplicationController
 	
 	before_filter :load_user
-	before_filter :load_project, :except => [:new, :create, :index]	
+	before_filter :load_project, :except => [:new, :create, :index]
 
 	def index
 		@project = Project.new
 		@projects = @user.projects
 		@collaborations = Collaborator.find_collaborations(@user.id)
 		#@tasklists = @projects.tasklists
-		@task = Task.new
+		#@task = Task.new
 	end
 
 	def new

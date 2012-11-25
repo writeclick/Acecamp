@@ -1,8 +1,7 @@
 <%= form_tag url_for(:controller => :tasklists,
-							:action => :create,
-							:project_id => project_id),
-							:class => 'form-vertical' do %> 
-  <%= text_field :tasklist, :name %>  
-  
-  <%= submit_tag('Add Tasklist', :class => 'btn-primary') %>
+							       :action => :create,
+							       :project_id => project_id),
+							       :class => 'form-vertical' do %>
+                        <%= text_field :tasklist, :name %>
+                        <%= submit_tag('Add Tasklist', :class => 'btn-primary') %>
 <% end %>

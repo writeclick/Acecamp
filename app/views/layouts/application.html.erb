@@ -20,16 +20,25 @@
     <div id="main" role="main">
       <div class="container">
         <div class="content">
-           <div class="row">
-            
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            
+          <div class="row">
+            <div class="span8">
+              <div class="well">
+                <%= yield %>
+              </div>
             </div>
-          <footer>
-          </footer>
-        </div>
+            <div class="span4">
+              <div class="well">
+                <h5>Placeholder Heading</h5>
+              </div>
+            </div>
+          </div>
+        </div> <!-- end of .content -->
       </div> <!--! end of .container -->
     </div> <!--! end of #main -->
+    <footer>
+      <div class="container">
+        Nothing Here Yet...
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,10 +1,11 @@
+<%= render "projects/form", :project => project %>
+
 <% @projects.each do |project| %>
 	<div class="accordion-group">
-
 		<div class="accordion-heading">
 			<a class="accordion-toggle"
 					data-toggle="collapse"
-					data-parent="accordion-projects"
+					data-parent="#accordion-projects"
 					href="#collapse<%=dom_id(project)%>">
 						<strong><%= project.title %></strong>
 			</a>
@@ -14,12 +15,10 @@
 
 		<div id="collapse<%=dom_id(project)%>" class="accordion-body collapse">
 			<div class="accordion-inner">
-				<%= project.description %>
-				<%= render 'collaborators/collaborator_form',
-									 :project_id => project.id %>
+				<p><%= project.description %></p>
 
-				<%= render 'tasklists/form',
-									 :project_id => project.id %>
+				<%= render 'collaborators/collaborator_form',
+           :project_id => project.id %>
 
 				<%= render 'tasklists/tasklists',
 									 :project => project %>
@@ -28,5 +27,3 @@
 
 	</div>
 <% end %>
-
-

@@ -1,5 +1,5 @@
 $(function () {
-	$( '#projects_tabs a:first').tab('show');
+	$( '#projects-tabs a:first').tab('show');
 })
 
 $('a[data-toggle="tab"]').on('shown', function(e) {
@@ -10,6 +10,6 @@ $('a[data-toggle="tab"]').on('shown', function(e) {
 //===================== accordion for projects ===============
 
 $('#accordion-projects').on('click', 'a', function(e){
-		$('.accordion-body').collapse('hide');
 		$(this).collapse('show');
+		$('.accordion-body').collapse('hide');
 });

@@ -1,25 +1,23 @@
+<%= render 'layouts/messages' %>
 
-<div class="span8">
-	<div class="well">
+<ul class="nav nav-tabs" id="projects-tabs">
+	<li><a href="#users-projects" data-toggle="tab">Your Projects</a></li>
+	<li><a href="#collaborations" data-toggle="tab">Collaborations</a></li>
+</ul>
 
-		<ul class="nav nav-tabs" id="projects_tabs">			
-			<li><a href="#users_projects" data-toggle="tab">Your Projects</a></li>
-			<li><a href="#collaborations" data-toggle="tab">Collaborations</a></li>
-			<%= render "projects/form", :locals => { :project => @project } %>
-		</ul>
-
-		<div class="tab-content">
-			<%= render 'projects_body' %>		
-			<%= render 'collaboration' %>
+<div class="tab-content">
+	<div class="tab-pane" id="users-projects">
+		<h1>All Your Projects</h1>
+		<div class="accordion" id="accordion-projects">
+			<%= render 'projects', :project => @project %>
 		</div>
+	</div>
 
+	<div class="tab-pane" id="collaborations">
+		<h3>Collaborating Projects</h3>
+		<div class="accordion" id="accordion-collaborations">
+			<%= render 'collaboration',
+								 :project => @project %>
+		</div>
 	</div>
 </div>
-
-<div class="span4">
-	<div class="well">
-		<h5>Placeholder Heading</h5>
-	</div>
-</div>
-
-

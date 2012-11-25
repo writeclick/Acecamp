@@ -1,8 +1,6 @@
+<% @collaborations.each do |collaboration| %>
+	<strong><%= collaboration.title %></strong>
+  <br />
+	<%= collaboration.description %>
+<% end %>
 
-<div class="tab-pane" id="collaborations">
-<h3>Collaborating Projects</h3>
-	<% @collaborations.each do |collaboration| %>
-		<strong><%= collaboration.title %></strong><br />
-		<%= collaboration.description %>
-	<% end %>
-</div>

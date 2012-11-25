@@ -9,7 +9,7 @@ class TasksController < ApplicationController
 		@tasklist = Tasklist.find(params[:tasklist_id])
 		@task.tasklist_id = @tasklist.id			
 		if @task.save
-			redirect_to projects_path
+			redirect_to root_path
 		else
 			render :new
 		end

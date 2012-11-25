@@ -10,7 +10,7 @@ class CollaboratorsController < ApplicationController
 		@collaborator = Collaborator.new(:user_id => @user.id, 
 			                               :project_id => @project.id)
 		if @collaborator.save
-			redirect_to projects_path
+			redirect_to root_path
 		end
 	end
 

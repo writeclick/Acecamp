@@ -11,8 +11,6 @@ DbcCamp::Application.routes.draw do
   resources :tasklists, :only => [:new, :create, :show, :update, :destroy]
   resources :tasks, :only => [:new, :create, :show, :update, :destroy]
 
-  #root :to => 'home#index
-
   devise_scope :user do
     root :to => "devise/sessions#new"
   end
@@ -71,7 +69,6 @@ DbcCamp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  
 
   # See how all your routes lay out with "rake routes"
 

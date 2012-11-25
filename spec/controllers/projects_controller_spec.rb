@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe ProjectsController do
 
-  # this is needed b/c we're using devise for authentication, and we need test data
+  # before block needed b/c we're using devise for authentication,
+  # & while we're at it, let's generate test data 5.times
   before(:each) do
     @user = create(:user)
     @some_projects = []
@@ -27,6 +28,9 @@ describe ProjectsController do
     it 'assigns all projects the user is a collaborator on to @collaborations' do
       get :index
       assigns(:collaborations).should eq(@some_projects)
+    end
+    it 'renders the default :index view' do
+      response.body.should_not be_nil
     end
   end
 

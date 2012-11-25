@@ -9,9 +9,9 @@ class TasklistsController < ApplicationController
 	def create
 		@project = Project.find(params[:project_id])
 		@tasklist = Tasklist.new(params[:tasklist])
-		@tasklist.project_id = @project.id			
+		@tasklist.project_id = @project.id
 		if @tasklist.save
-			redirect_to projects_path
+			redirect_to root_path
 		else
 			render :new
 		end

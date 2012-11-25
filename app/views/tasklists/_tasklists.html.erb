@@ -1,0 +1,17 @@
+<% project.tasklists.each do |tasklist| %>
+  <p><strong>Tasklist:<%= tasklist.name %></strong></p>
+
+  <ul>
+
+    <% tasklist.tasks.each do |task| %>
+        <li>
+          <strong><%= task.name %></strong><br /><%= task.description %>
+        </li>
+    <% end %>
+
+    <%= render 'tasks/form',
+                :tasklist_id => tasklist.id,
+                :project_id => tasklist.project_id %>
+  </ul>
+
+<% end %>

@@ -1,8 +1,21 @@
-<%= form_tag url_for(:controller => :collaborators,
-							:action => :create,
-							:project_id => project_id),
-							:class => 'form-vertical' do %> 
-  <%= text_field_tag :email %>  
-  
-  <%= submit_tag('Add Collaborator', :class => 'btn-primary') %>
-<% end %>
+<div id="new-collaborator<%= project_id %>" class="modal hide fade">
+  <%= form_tag url_for(:controller => :collaborators,
+                       :action => :create,
+                       :project_id => project_id),
+                       :class => 'form-vertical' do %>
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        &times;
+      </button>
+
+      <h3>New Collaborator<h3>
+    </div>
+
+    <div class="modal-body">
+      <%= text_field_tag :email %>
+      <%= submit_tag('Add Collaborator', :class => 'btn-primary') %>
+    </div>
+
+  <% end %>
+</div>

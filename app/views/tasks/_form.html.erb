@@ -1,12 +1,27 @@
-<%= form_tag url_for(:controller => :tasks, 
-						 :action => :create,
-						 :tasklist_id => tasklist_id),			 
-						 :class => 'form-vertical' do %>
-	<fieldset> 
-  <%= text_field :task, :name %><br />
-  <%= text_area :task, :description %><br />
- 
-  <%= submit_tag('Add Task', :class => 'btn-primary') %>
-  </fieldset>
-<% end %>
-	
+
+<div id="new-task<%= tasklist_id %>" class="modal hide fade">
+  <%= form_tag url_for(:controller => :tasks, 
+                       :action => :create,
+                       :tasklist_id => tasklist_id),
+                       :class => 'form-vertical' do %>
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        &times;
+      </button>
+
+      <h3>New Task<h3>
+    </div>
+
+    <div class="modal-body">
+      <fieldset>
+        <%= label_tag 'name', 'Task Name' %>
+        <%= text_field :task, :name %><br />
+        <%= label_tag 'description', 'Description' %>
+        <%= text_area :task, :description, :size => "200x3" %><br />
+        <%= submit_tag('Add Task', :class => 'btn-primary') %>
+      </fieldset>
+    </div>
+
+  <% end %>
+</div>

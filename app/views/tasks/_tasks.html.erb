@@ -1,5 +1,9 @@
 <% tasklist.tasks.each do |task| %>
-  <li>
-    <strong><%= task.name %></strong><br /><%= task.description %>
+  <li class="ui-state-default">
+    <span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= task.name %>
   </li>
 <% end %>
+
+<%= render 'tasks/form',
+           :tasklist_id => tasklist.id,
+           :project_id => tasklist.project_id %>

@@ -2,15 +2,21 @@
            :project_id => project.id %>
 
 <div class="tasklists">
-  <% project.tasklists.each do |tasklist| %>
-    <p><strong>Tasklist:<%= tasklist.name %></strong></p>
-    <ul>
-      <%= render 'tasks/tasks',
-                 :tasklist => tasklist %>
-
-      <%= render 'tasks/form',
-                 :tasklist_id => tasklist.id,
-                 :project_id => tasklist.project_id %>
-    </ul>
-  <% end %>
+  <h3>Tasklists:</h3>
+    <% project.tasklists.each do |tasklist| %>
+      <ul id="sortable-list<%= tasklist.id %>" class="sortable-lists connectedSortableList">
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+          <div class="pull-right add-task-btn">
+            <a href="#new-task<%= tasklist.id %>" data-toggle="modal" class="btn btn-primary btn-mini">
+              + Task
+            </a>
+          </div>
+          <p><strong><%= tasklist.name %></strong></p>
+          <ul id="sortable<%= tasklist.id %>" class="sortable-tasks connectedSortable">
+            <%= render 'tasks/tasks',
+                       :tasklist => tasklist %>
+          </ul>
+        </li>
+      </ul>
+    <% end %>
 </div>

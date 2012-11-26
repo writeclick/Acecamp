@@ -5,3 +5,50 @@ body { padding-top: 60px; }
 .content { background-color: #000000; }
 
 .accordion-inner { background-color: #FEFEFE; }
+
+.add-task-btn { margin-right: 3px; }
+
+.tab-content { overflow: visible; }
+
+#accordion-projects .collapse.in { overflow: visible; }
+
+input, textarea, .uneditable-input { width: 516px; }
+
+ul.sortable-lists .ui-state-default,
+ul.sortable-lists .ui-widget-content .ui-state-default,
+ul.sortable-lists .ui-widget-header .ui-state-default {
+	background: none;
+	border: none;
+	a { color: white; }
+}
+
+ul.sortable-tasks .ui-state-default,
+ul.sortable-tasks .ui-widget-content .ui-state-default,
+ul.sortable-tasks .ui-widget-header .ui-state-default {
+	border: 1px solid lightGrey;
+	background: #E6E6E6 url(smoothness/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #555;
+}
+
+.sortable-lists .ui-state-default { background-color: white !important; }
+
+ .sortable-lists { list-style-type: none; margin: 0; margin-bottom: 2.0em; padding: 0; width: 100%; }
+ .sortable-lists li {
+ 	margin: 0 3px 3px 3px;
+ 	padding: 0.4em;
+ 	padding-left: 1.5em;
+ 	font-size: .9em;
+ 	background-color: white;
+ }
+ .sortable-lists li span { position: absolute; margin-left: -1.3em; }
+
+ .sortable-tasks { list-style-type: none; margin: 0; margin-bottom: 2.0em; padding: 0; width: 100%; }
+ .sortable-tasks li {
+ 	margin: 0 3px 3px 3px;
+ 	padding: 0.4em;
+ 	padding-left: 1.5em;
+ 	font-size: .9em;
+ 	height: 12px;
+ }
+ .sortable-tasks li span { position: absolute; margin-left: -1.3em; }

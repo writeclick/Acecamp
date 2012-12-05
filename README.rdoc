@@ -4,7 +4,7 @@ Acecamp is a single-page project management app inspired by Basecamp.
 
 # Motivation
 
-Kyle Snell & Jeremy Lee James started collaborating on this project while attending the Fall 2012 cohort of Dev Bootcamp in San Francisco, CA. The ideas is to create something useful while practicing Ruby on Rails, Javascript, and TDD.
+Kyle Snell & Jeremy Lee James started collaborating on this project while attending the Fall 2012 cohort of Dev Bootcamp in San Francisco, CA. The idea is to create something useful while practicing Ruby on Rails, Javascript, and TDD.
 
 This project is still in progress. Preliminary enhancements coming soon include:
 
